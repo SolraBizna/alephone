@@ -126,6 +126,7 @@ Feb 8, 2003 (Woody Zenfell):
 
 #include "ephemera.h"
 #include "interpolated_world.h"
+#include "SecondMusicSystem.h"
 
 /* ---------- constants */
 

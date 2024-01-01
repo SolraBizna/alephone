@@ -55,7 +55,7 @@ public:
 	void StopAllPlayers();
 	std::shared_ptr<SoundPlayer> PlaySound(const Sound& sound, const SoundParameters& parameters);
 	std::shared_ptr<MusicPlayer> PlayMusic(std::shared_ptr<StreamDecoder> decoder, MusicParameters parameters);
-	std::shared_ptr<StreamPlayer> PlayStream(CallBackStreamPlayer callback, int length, int rate, bool stereo, AudioFormat audioFormat);
+	std::shared_ptr<StreamPlayer> PlayStream(CallBackStreamPlayer callback, int rate, bool stereo, AudioFormat audioFormat, float initialGain = 1.0f, bool shouldRoutinelyStop = true);
 	std::unique_ptr<AudioPlayer::AudioSource> PickAvailableSource(const AudioPlayer& audioPlayer);
 	void UpdateListener(world_location3d listener) { listener_location.Set(listener); }
 	const world_location3d& GetListener() const { return listener_location.Get(); }

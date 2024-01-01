@@ -107,6 +107,7 @@ protected:
     ALenum format = 0; //Mono 8-16-32f or stereo 8-16-32f
     std::unique_ptr<AudioSource> audio_source;
     virtual void Rewind();
+    virtual bool ShouldRoutinelyStop() const { return true; }
 };
 
 #endif

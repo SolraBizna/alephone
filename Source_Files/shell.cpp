@@ -113,6 +113,8 @@
 #include "HTTP.h"
 #include "WadImageCache.h"
 
+#include "SecondMusicSystem.h"
+
 #ifdef __WIN32__
 #define WIN32_LEAN_AND_MEAN
 #include <dwmapi.h>
@@ -631,8 +633,11 @@ void main_event_loop(void)
 			  }
 				break;
 
-			case _display_intro_screens:
 			case _display_main_menu:
+#ifdef HAVE_SECOND_MUSIC_SYSTEM
+				SMS::Deactivate();
+#endif
+			case _display_intro_screens:
 			case _display_chapter_heading:
 			case _display_prologue:
 			case _display_epilogue:
