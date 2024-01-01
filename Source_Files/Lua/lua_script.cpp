@@ -121,6 +121,7 @@ extern "C"
 #include "lua_projectiles.h"
 #include "lua_saved_objects.h"
 #include "lua_serialize.h"
+#include "lua_sms.h"
 
 #include <boost/iostreams/device/array.hpp>
 #include <boost/iostreams/stream_buffer.hpp>
@@ -808,6 +809,9 @@ void LuaState::RegisterFunctions()
 	Lua_Player_register(State());
 	Lua_Projectiles_register(State());
 	Lua_Saved_Objects_register(State());
+#ifdef HAVE_SECOND_MUSIC_SYSTEM
+	Lua_SMS_register(State());
+#endif
 }
 
 static const char *compatibility_triggers = ""

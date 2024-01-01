@@ -33,6 +33,7 @@ AX_ARG_WITH([curl], [cURL for HTTP communication])
 AX_ARG_WITH([zzip], [zziplib support])
 AX_ARG_WITH([png], [libpng PNG screenshot support])
 AX_ARG_WITH([miniupnpc], [miniupnpc support])
+AX_ARG_WITH([sms], [Second Music System support])
 
 dnl Check for programs.
 AC_PROG_CC
@@ -191,10 +192,10 @@ AM_CONDITIONAL([MAKE_OPENGL], [test "x$have_opengl" = "xtrue" ])
 
 dnl Check optional packages.
 
-dnl AX_CHECK_FEATURE_LIB(option, define, header, lib, func)
+dnl AX_CHECK_FEATURE_LIB(option, define, header, lib, func, extralibs)
 AC_DEFUN([AX_CHECK_FEATURE_LIB],
          [ AS_IF([test "x${with_$1}" != "xno"],
-                 [ AC_CHECK_HEADERS([$3], [AC_CHECK_LIB([$4], [$5])])
+                 [ AC_CHECK_HEADERS([$3], [AC_CHECK_LIB([$4], [$5],,, [$6])])
                    AS_IF([test "x${ac_cv_lib_$4_$5}" = "xyes"],
                          [ have_$1=true
                            AC_DEFINE([HAVE_$2], [1], [${desc_$1} enabled]) ],
@@ -239,6 +240,12 @@ AX_CHECK_FEATURE_PKG([png], [PNG],
                      [PNG], [libpng])
 
 AX_CHECK_FEATURE_LIB([miniupnpc], [MINIUPNPC], [miniupnpc/miniupnpc.h], [miniupnpc], [upnpDiscover])
+
+AX_CHECK_FEATURE_LIB([sms], [SECOND_MUSIC_SYSTEM], [second-music-system.h], [c_second_music_system], [SMS_Soundtrack_new], [-lsoxr -lm])
+dnl If linking with -lc_second_music_system, we must also link with -lsoxr.
+dnl In addition, it must be *after* the SMS library in the command line.
+dnl AC_CHECK_LIB won't put this in for us.
+AS_IF([test "x${have_sms}" != "x"], [LIBS="$LIBS -lsoxr"])
 
 dnl Generate Makefiles.
 AC_CONFIG_FILES([
@@ -304,5 +311,6 @@ AX_PRINT_SUMMARY([curl])
 AX_PRINT_SUMMARY([zzip])
 AX_PRINT_SUMMARY([png])
 AX_PRINT_SUMMARY([miniupnpc])
+AX_PRINT_SUMMARY([sms])
 AS_ECHO([""])
 AS_ECHO(["Configuration done. Now type \"make\"."])

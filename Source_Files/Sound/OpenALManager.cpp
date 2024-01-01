@@ -1,5 +1,6 @@
 #include "OpenALManager.h"
 #include "Logging.h"
+#include "SecondMusicSystem.h"
 
 LPALCLOOPBACKOPENDEVICESOFT OpenALManager::alcLoopbackOpenDeviceSOFT;
 LPALCISRENDERFORMATSUPPORTEDSOFT OpenALManager::alcIsRenderFormatSupportedSOFT;
@@ -114,6 +115,9 @@ void OpenALManager::ResyncPlayers() {
 }
 
 void OpenALManager::Start() {
+#ifdef HAVE_SECOND_MUSIC_SYSTEM
+	SMS::SetBackgroundLoading(!is_using_recording_device);
+#endif
 	SDL_PauseAudio(is_using_recording_device); //Start playing only if not recording playback
 	process_audio_active = SDL_GetAudioStatus() != SDL_AUDIO_STOPPED;
 }
@@ -143,10 +147,10 @@ std::shared_ptr<MusicPlayer> OpenALManager::PlayMusic(std::shared_ptr<StreamDeco
 	return musicPlayer;
 }
 
-//Used for video playback
-std::shared_ptr<StreamPlayer> OpenALManager::PlayStream(CallBackStreamPlayer callback, int length, int rate, bool stereo, AudioFormat audioFormat) {
+//Used for video playback and Second Music System
+std::shared_ptr<StreamPlayer> OpenALManager::PlayStream(CallBackStreamPlayer callback, int rate, bool stereo, AudioFormat audioFormat, float initialGain, bool shouldRoutinelyStop) {
 	if (!process_audio_active) return std::shared_ptr<StreamPlayer>();
-	auto streamPlayer = std::make_shared<StreamPlayer>(callback, length, rate, stereo, audioFormat);
+	auto streamPlayer = std::make_shared<StreamPlayer>(callback, rate, stereo, audioFormat, initialGain, shouldRoutinelyStop);
 	audio_players_shared.push(streamPlayer);
 	return streamPlayer;
 }
@@ -170,18 +174,22 @@ std::unique_ptr<AudioPlayer::AudioSource> OpenALManager::PickAvailableSource(con
 
 void OpenALManager::StopAllPlayers() {
 	SDL_LockAudio();
-
-	for (auto& audioPlayer : audio_players_queue) {
-		RetrieveSource(audioPlayer);
+	auto should_stop = [](std::shared_ptr<AudioPlayer> x) {
+		return x->ShouldRoutinelyStop();
+	};
+	for (auto& player : audio_players_queue) {
+		if(should_stop(player)) RetrieveSource(player);
 	}
-
-	audio_players_queue.clear();
-
+	auto it1 = std::remove_if(audio_players_queue.begin(), audio_players_queue.end(), should_stop);
+	audio_players_queue.erase(it1, audio_players_queue.end());
 	std::shared_ptr<AudioPlayer> audioPlayer;
 	while (audio_players_shared.pop(audioPlayer)) {
 		audioPlayer->is_active = false;
 	}
-
+#ifdef HAVE_SECOND_MUSIC_SYSTEM
+	// unfortunately, this is the only reliable place to call this
+	SMS::LeavingMap();
+#endif
 	SDL_UnlockAudio();
 }
 
