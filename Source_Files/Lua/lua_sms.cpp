@@ -23,6 +23,10 @@
 
 */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef HAVE_SECOND_MUSIC_SYSTEM
 
 #include "lua_sms.h"
