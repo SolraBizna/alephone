@@ -28,7 +28,6 @@
 
 #include "cseries.h"
 
-#ifdef HAVE_LUA
 extern "C"
 {
 #include "lua.h"
@@ -42,7 +41,5 @@ extern char Lua_SMS_Name[]; // SMS
 typedef L_Class<Lua_SMS_Name> Lua_SMS;
 
 int Lua_SMS_register(lua_State* L);
-
-#endif
 
 #endif
