@@ -16,6 +16,8 @@ runs:
     using: "composite"
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
     
     - name: Install Tools
       run: brew install nasm
@@ -34,6 +36,9 @@ runs:
       with:
         path: vcpkg/${{inputs.vcpkg_installed_folder}}
         key: ${{runner.os}}-${{inputs.vcpkg_installed_folder}}-${{env.vcpkg_current_hash}}-${{hashFiles('**/vcpkg.json')}}
+        restore-keys: |
+          ${{runner.os}}-${{inputs.vcpkg_installed_folder}}-${{env.vcpkg_current_hash}}-
+          ${{runner.os}}-${{inputs.vcpkg_installed_folder}}-
       
     - name: Switch to Xcode 14.3.1
       run: sudo xcode-select --switch /Applications/Xcode_14.3.1.app
