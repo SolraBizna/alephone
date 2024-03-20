@@ -5668,7 +5668,7 @@
 				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
 					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib",
 					"$(SRCROOT)/../csms-binaries/mac-x86_64-release",
-				];
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				"MACOSX_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
 				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.13;
