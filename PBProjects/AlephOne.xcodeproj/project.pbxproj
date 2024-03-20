@@ -1791,6 +1791,22 @@
 		AEFD879713EB84CF00C1E687 /* csalerts.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA31D2B113C9DF700266621 /* csalerts.mm */; };
 		AEFD879813EB84CF00C1E687 /* lua_saved_objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 276589F6119DF1DD0096F75B /* lua_saved_objects.cpp */; };
 		AEFD879913EB84CF00C1E687 /* FilmProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27D1A4F112FDF3630085E79C /* FilmProfile.cpp */; };
+		BAB73C302B89768B006CDA9B /* lua_sms.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C2E2B89768B006CDA9B /* lua_sms.h */; };
+		BAB73C312B89768B006CDA9B /* lua_sms.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C2E2B89768B006CDA9B /* lua_sms.h */; };
+		BAB73C322B89768B006CDA9B /* lua_sms.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C2E2B89768B006CDA9B /* lua_sms.h */; };
+		BAB73C332B89768B006CDA9B /* lua_sms.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C2E2B89768B006CDA9B /* lua_sms.h */; };
+		BAB73C342B89768B006CDA9B /* lua_sms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */; };
+		BAB73C352B89768B006CDA9B /* lua_sms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */; };
+		BAB73C362B89768B006CDA9B /* lua_sms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */; };
+		BAB73C372B89768B006CDA9B /* lua_sms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */; };
+		BAB73C3A2B89793D006CDA9B /* SecondMusicSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */; };
+		BAB73C3B2B89793D006CDA9B /* SecondMusicSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */; };
+		BAB73C3C2B89793D006CDA9B /* SecondMusicSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */; };
+		BAB73C3D2B89793D006CDA9B /* SecondMusicSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */; };
+		BAB73C3E2B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */; };
+		BAB73C3F2B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */; };
+		BAB73C402B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */; };
+		BAB73C412B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */; };
 		C13C71E71B3FB4C500F1188D /* DefaultStringSets.h in Headers */ = {isa = PBXBuildFile; fileRef = C13C71E61B3FB4C500F1188D /* DefaultStringSets.h */; };
 		C13C71E81B3FB4C500F1188D /* DefaultStringSets.h in Headers */ = {isa = PBXBuildFile; fileRef = C13C71E61B3FB4C500F1188D /* DefaultStringSets.h */; };
 		C13C71E91B3FB4C500F1188D /* DefaultStringSets.h in Headers */ = {isa = PBXBuildFile; fileRef = C13C71E61B3FB4C500F1188D /* DefaultStringSets.h */; };
@@ -2062,6 +2078,10 @@
 		AEF5025E09A825E2004B0179 /* OGL_LoadScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGL_LoadScreen.cpp; sourceTree = "<group>"; };
 		AEF8C4F210AEFEB500ED84AD /* OGL_Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGL_Headers.h; sourceTree = "<group>"; };
 		AEFD87C313EB84CF00C1E687 /* Classic Marathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Marathon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB73C2E2B89768B006CDA9B /* lua_sms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_sms.h; sourceTree = "<group>"; };
+		BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_sms.cpp; sourceTree = "<group>"; };
+		BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondMusicSystem.h; sourceTree = "<group>"; };
+		BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SecondMusicSystem.cpp; sourceTree = "<group>"; };
 		C13C71E61B3FB4C500F1188D /* DefaultStringSets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultStringSets.h; path = ../Source_Files/Misc/DefaultStringSets.h; sourceTree = "<group>"; };
 		EF2EF5C804819BD700A8000D /* network_star_hub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network_star_hub.cpp; path = ../Source_Files/Network/network_star_hub.cpp; sourceTree = "<group>"; };
 		EF2EF5C904819BD700A8000D /* network_star_spoke.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network_star_spoke.cpp; path = ../Source_Files/Network/network_star_spoke.cpp; sourceTree = "<group>"; };
@@ -2638,6 +2658,8 @@
 		F51B0587047AC6DA01C5C930 /* Lua */ = {
 			isa = PBXGroup;
 			children = (
+				BAB73C2F2B89768B006CDA9B /* lua_sms.cpp */,
+				BAB73C2E2B89768B006CDA9B /* lua_sms.h */,
 				AE96370B2A39578600DE43FF /* lua_music.cpp */,
 				AE96370A2A39577800DE43FF /* lua_music.h */,
 				AE780E1A2533A4FF002184B5 /* lua_ephemera.h */,
@@ -3169,6 +3191,8 @@
 		F5CC94110240DA4301A80001 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				BAB73C392B89793D006CDA9B /* SecondMusicSystem.cpp */,
+				BAB73C382B89793D006CDA9B /* SecondMusicSystem.h */,
 				AE61F17D28615A37003128EE /* AudioPlayer.h */,
 				AE61F18128615A37003128EE /* MusicPlayer.h */,
 				AE61F18028615A37003128EE /* OpenALManager.h */,
@@ -3338,6 +3362,7 @@
 				278E0C831AA4012600FA93B7 /* SDL_rwops_ostream.h in Headers */,
 				AE505B7D141D45E600915344 /* lightsource.h in Headers */,
 				AE505B7E141D45E600915344 /* map.h in Headers */,
+				BAB73C322B89768B006CDA9B /* lua_sms.h in Headers */,
 				276BED121A846FD900AE52F4 /* CourierPrimeBoldItalic.h in Headers */,
 				27A6DB521B9CED1E003DA766 /* confpaths.h in Headers */,
 				AE505B7F141D45E600915344 /* media.h in Headers */,
@@ -3348,6 +3373,7 @@
 				AE505B84141D45E600915344 /* platform_definitions.h in Headers */,
 				27A6DAD31B9CE9A5003DA766 /* mytm.h in Headers */,
 				276BED0A1A846FD900AE52F4 /* CourierPrime.h in Headers */,
+				BAB73C3C2B89793D006CDA9B /* SecondMusicSystem.h in Headers */,
 				27FF265C1B6F169200DA0A19 /* InfoTree.h in Headers */,
 				AE505B85141D45E600915344 /* platforms.h in Headers */,
 				AE505B86141D45E600915344 /* player.h in Headers */,
@@ -3550,6 +3576,7 @@
 				278E0C841AA4012600FA93B7 /* SDL_rwops_ostream.h in Headers */,
 				AEB4A11D14296CAE00537AE7 /* lightsource.h in Headers */,
 				AEB4A11E14296CAE00537AE7 /* map.h in Headers */,
+				BAB73C332B89768B006CDA9B /* lua_sms.h in Headers */,
 				276BED131A846FD900AE52F4 /* CourierPrimeBoldItalic.h in Headers */,
 				27A6DB531B9CED1E003DA766 /* confpaths.h in Headers */,
 				AEB4A11F14296CAE00537AE7 /* media.h in Headers */,
@@ -3560,6 +3587,7 @@
 				AEB4A12414296CAE00537AE7 /* platform_definitions.h in Headers */,
 				27A6DAD41B9CE9A6003DA766 /* mytm.h in Headers */,
 				276BED0B1A846FD900AE52F4 /* CourierPrime.h in Headers */,
+				BAB73C3D2B89793D006CDA9B /* SecondMusicSystem.h in Headers */,
 				27FF265D1B6F169200DA0A19 /* InfoTree.h in Headers */,
 				AEB4A12514296CAE00537AE7 /* platforms.h in Headers */,
 				AEB4A12614296CAE00537AE7 /* player.h in Headers */,
@@ -3762,6 +3790,7 @@
 				AEC3C74E09AD68AC003258E4 /* items.h in Headers */,
 				AEC3C74F09AD68AC003258E4 /* lightsource.h in Headers */,
 				27A6DB501B9CED1E003DA766 /* confpaths.h in Headers */,
+				BAB73C302B89768B006CDA9B /* lua_sms.h in Headers */,
 				276BECFA1A846D2000AE52F4 /* network_dialog_widgets_sdl.h in Headers */,
 				AEC3C75009AD68AC003258E4 /* map.h in Headers */,
 				AEC3C75109AD68AC003258E4 /* media.h in Headers */,
@@ -3772,6 +3801,7 @@
 				27A6DAD11B9CE9A4003DA766 /* mytm.h in Headers */,
 				AEC3C75609AD68AC003258E4 /* platform_definitions.h in Headers */,
 				AEC3C75709AD68AC003258E4 /* platforms.h in Headers */,
+				BAB73C3A2B89793D006CDA9B /* SecondMusicSystem.h in Headers */,
 				AEC3C75809AD68AC003258E4 /* player.h in Headers */,
 				AEC3C75909AD68AC003258E4 /* projectile_definitions.h in Headers */,
 				27A6DB481B9CED02003DA766 /* config.h in Headers */,
@@ -3974,6 +4004,7 @@
 				278E0C821AA4012600FA93B7 /* SDL_rwops_ostream.h in Headers */,
 				AEFD862B13EB84CF00C1E687 /* lightsource.h in Headers */,
 				AEFD862C13EB84CF00C1E687 /* map.h in Headers */,
+				BAB73C312B89768B006CDA9B /* lua_sms.h in Headers */,
 				276BED111A846FD900AE52F4 /* CourierPrimeBoldItalic.h in Headers */,
 				27A6DB511B9CED1E003DA766 /* confpaths.h in Headers */,
 				AEFD862D13EB84CF00C1E687 /* media.h in Headers */,
@@ -3984,6 +4015,7 @@
 				AEFD863213EB84CF00C1E687 /* platform_definitions.h in Headers */,
 				27A6DAD21B9CE9A5003DA766 /* mytm.h in Headers */,
 				276BED091A846FD900AE52F4 /* CourierPrime.h in Headers */,
+				BAB73C3B2B89793D006CDA9B /* SecondMusicSystem.h in Headers */,
 				27FF265B1B6F169200DA0A19 /* InfoTree.h in Headers */,
 				AEFD863313EB84CF00C1E687 /* platforms.h in Headers */,
 				AEFD863413EB84CF00C1E687 /* player.h in Headers */,
@@ -4561,6 +4593,7 @@
 				AE505C85141D45E600915344 /* preprocess_map_shared.cpp in Sources */,
 				AE505C86141D45E600915344 /* OGL_Model_Def.cpp in Sources */,
 				AE505C87141D45E600915344 /* OGL_Subst_Texture_Def.cpp in Sources */,
+				BAB73C362B89768B006CDA9B /* lua_sms.cpp in Sources */,
 				AE505C88141D45E600915344 /* network_star_hub.cpp in Sources */,
 				27FF26611B6F170600DA0A19 /* InfoTree.cpp in Sources */,
 				AE505C89141D45E600915344 /* network_star_spoke.cpp in Sources */,
@@ -4590,6 +4623,7 @@
 				AE505CA9141D45E600915344 /* Scenario.cpp in Sources */,
 				AE505CAA141D45E600915344 /* preference_dialogs.cpp in Sources */,
 				AE505CAB141D45E600915344 /* OGL_Blitter.cpp in Sources */,
+				BAB73C402B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */,
 				AE505CAC141D45E600915344 /* SW_Texture_Extras.cpp in Sources */,
 				AE505CAE141D45E600915344 /* Music.cpp in Sources */,
 				AEEA4E812544B50B0031363A /* shell_options.cpp in Sources */,
@@ -4787,6 +4821,7 @@
 				AEB4A22614296CAE00537AE7 /* preprocess_map_shared.cpp in Sources */,
 				AEB4A22714296CAE00537AE7 /* OGL_Model_Def.cpp in Sources */,
 				AEB4A22814296CAE00537AE7 /* OGL_Subst_Texture_Def.cpp in Sources */,
+				BAB73C372B89768B006CDA9B /* lua_sms.cpp in Sources */,
 				AEB4A22914296CAE00537AE7 /* network_star_hub.cpp in Sources */,
 				27FF26621B6F170600DA0A19 /* InfoTree.cpp in Sources */,
 				AEB4A22A14296CAE00537AE7 /* network_star_spoke.cpp in Sources */,
@@ -4816,6 +4851,7 @@
 				AEB4A24A14296CAE00537AE7 /* Scenario.cpp in Sources */,
 				AEB4A24B14296CAE00537AE7 /* preference_dialogs.cpp in Sources */,
 				AEB4A24C14296CAE00537AE7 /* OGL_Blitter.cpp in Sources */,
+				BAB73C412B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */,
 				AEB4A24D14296CAE00537AE7 /* SW_Texture_Extras.cpp in Sources */,
 				AEB4A24F14296CAE00537AE7 /* Music.cpp in Sources */,
 				AEEA4E822544B50B0031363A /* shell_options.cpp in Sources */,
@@ -5013,6 +5049,7 @@
 				AEC3C85309AD68AC003258E4 /* preprocess_map_shared.cpp in Sources */,
 				AEC3C85409AD68AC003258E4 /* OGL_Model_Def.cpp in Sources */,
 				AEC3C85509AD68AC003258E4 /* OGL_Subst_Texture_Def.cpp in Sources */,
+				BAB73C342B89768B006CDA9B /* lua_sms.cpp in Sources */,
 				AEC3C85609AD68AC003258E4 /* network_star_hub.cpp in Sources */,
 				27FF26631B6F1E0700DA0A19 /* InfoTree.cpp in Sources */,
 				AEC3C85709AD68AC003258E4 /* network_star_spoke.cpp in Sources */,
@@ -5042,6 +5079,7 @@
 				AE2A50CE09C67253007681A4 /* Scenario.cpp in Sources */,
 				AE2FDECC09E934E000A18ABC /* preference_dialogs.cpp in Sources */,
 				AE0053EE0ABE16300038507F /* OGL_Blitter.cpp in Sources */,
+				BAB73C3E2B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */,
 				AEC02F910B6D8B310095E8C9 /* SW_Texture_Extras.cpp in Sources */,
 				AE626E6E0B878534009CFF2D /* Music.cpp in Sources */,
 				AEEA4E7F2544B50B0031363A /* shell_options.cpp in Sources */,
@@ -5239,6 +5277,7 @@
 				AEFD873213EB84CF00C1E687 /* preprocess_map_shared.cpp in Sources */,
 				AEFD873313EB84CF00C1E687 /* OGL_Model_Def.cpp in Sources */,
 				AEFD873413EB84CF00C1E687 /* OGL_Subst_Texture_Def.cpp in Sources */,
+				BAB73C352B89768B006CDA9B /* lua_sms.cpp in Sources */,
 				AEFD873513EB84CF00C1E687 /* network_star_hub.cpp in Sources */,
 				27FF26601B6F170600DA0A19 /* InfoTree.cpp in Sources */,
 				AEFD873613EB84CF00C1E687 /* network_star_spoke.cpp in Sources */,
@@ -5268,6 +5307,7 @@
 				AEFD875613EB84CF00C1E687 /* Scenario.cpp in Sources */,
 				AEFD875713EB84CF00C1E687 /* preference_dialogs.cpp in Sources */,
 				AEFD875813EB84CF00C1E687 /* OGL_Blitter.cpp in Sources */,
+				BAB73C3F2B89793D006CDA9B /* SecondMusicSystem.cpp in Sources */,
 				AEFD875913EB84CF00C1E687 /* SW_Texture_Extras.cpp in Sources */,
 				AEFD875B13EB84CF00C1E687 /* Music.cpp in Sources */,
 				AEEA4E802544B50B0031363A /* shell_options.cpp in Sources */,
@@ -5449,23 +5489,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				"HEADER_SEARCH_PATHS[arch=arm64]" = [
+				"HEADER_SEARCH_PATHS[arch=arm64]" = (
 					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include",
 					"$(SRCROOT)/../csms-binaries/include",
-				];
-				"HEADER_SEARCH_PATHS[arch=x86_64]" = [
+				);
+				"HEADER_SEARCH_PATHS[arch=x86_64]" = (
 					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include",
 					"$(SRCROOT)/../csms-binaries/include",
-				];
+				);
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = [
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
 					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib",
 					"$(SRCROOT)/../csms-binaries/mac-arm64e-release",
-				];
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = [
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
 					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib",
 					"$(SRCROOT)/../csms-binaries/mac-x86_64-release",
-				];
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				"MACOSX_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
 				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.13;
@@ -5612,20 +5652,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				"HEADER_SEARCH_PATHS[arch=arm64]" = [
+				"HEADER_SEARCH_PATHS[arch=arm64]" = (
 					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include",
 					"$(SRCROOT)/../csms-binaries/include",
-				];
-				"HEADER_SEARCH_PATHS[arch=x86_64]" = [
+				);
+				"HEADER_SEARCH_PATHS[arch=x86_64]" = (
 					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include",
 					"$(SRCROOT)/../csms-binaries/include",
-				];
+				);
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = [
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
 					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib",
 					"$(SRCROOT)/../csms-binaries/mac-arm64e-release",
-				];
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = [
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
 					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib",
 					"$(SRCROOT)/../csms-binaries/mac-x86_64-release",
 				];
