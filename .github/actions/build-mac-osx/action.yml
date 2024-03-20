@@ -51,5 +51,5 @@ runs:
         key: ${{runner.os}}-${{inputs.vcpkg_installed_folder}}-${{env.vcpkg_current_hash}}-${{hashFiles('**/vcpkg.json')}}
       
     - name: Build
-      run: cd PBProjects && xcodebuild -arch ${{inputs.xcode_arch}} -target "Aleph One" DEVELOPMENT_TEAM='' CODE_SIGN_IDENTITY='-' CODE_SIGN_STYLE='Automatic' build
+      run: cd PBProjects && xcodebuild -arch ${{inputs.xcode_arch}} -target "Aleph One" DEVELOPMENT_TEAM='' CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO build
       shell: bash
