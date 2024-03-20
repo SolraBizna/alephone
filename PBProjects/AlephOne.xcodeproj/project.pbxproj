@@ -6526,6 +6526,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.bungie.source.AlephOne;
@@ -6583,11 +6584,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				"HEADER_SEARCH_PATHS[arch=arm64]" = "$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include";
-				"HEADER_SEARCH_PATHS[arch=x86_64]" = "$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include";
+				"HEADER_SEARCH_PATHS[arch=arm64]" = [
+					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include",
+					"$(SRCROOT)/../csms-binaries/include",
+				];
+				"HEADER_SEARCH_PATHS[arch=x86_64]" = [
+					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include",
+					"$(SRCROOT)/../csms-binaries/include",
+				];
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib";
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = [
+					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib",
+					"$(SRCROOT)/../csms-binaries/mac-arm64e-release",
+				];
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = [
+					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib",
+					"$(SRCROOT)/../csms-binaries/mac-x86_64-release",
+				];
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				"MACOSX_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
 				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.13;
@@ -6637,6 +6650,8 @@
 					"-lsndfile",
 					"-lopenal",
 					"-ljpeg",
+					"-lc_second_music_system",
+					"-lsoxr",
 				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
@@ -6674,6 +6689,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.bungie.source.AlephOne;
@@ -6731,11 +6747,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				"HEADER_SEARCH_PATHS[arch=arm64]" = "$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include";
-				"HEADER_SEARCH_PATHS[arch=x86_64]" = "$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include";
+				"HEADER_SEARCH_PATHS[arch=arm64]" = [
+					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/include",
+					"$(SRCROOT)/../csms-binaries/include",
+				];
+				"HEADER_SEARCH_PATHS[arch=x86_64]" = [
+					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/include",
+					"$(SRCROOT)/../csms-binaries/include",
+				];
 				INFOPLIST_FILE = "Info-AlephOne-Xcode4.plist";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib";
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = [
+					"$(SRCROOT)/../vcpkg/installed-arm64-osx/arm64-osx/lib",
+					"$(SRCROOT)/../csms-binaries/mac-arm64e-release",
+				];
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = [
+					"$(SRCROOT)/../vcpkg/installed-x64-osx/x64-osx/lib",
+					"$(SRCROOT)/../csms-binaries/mac-x86_64-release",
+				];
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				"MACOSX_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
 				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.13;
@@ -6784,6 +6812,8 @@
 					"-lsndfile",
 					"-lopenal",
 					"-ljpeg",
+					"-lc_second_music_system",
+					"-lsoxr",
 				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
@@ -6823,6 +6853,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6850,6 +6881,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6951,6 +6983,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon Infinity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6978,6 +7011,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon Infinity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -7005,6 +7039,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -7032,6 +7067,7 @@
 					SDL,
 					HAVE_BUNDLE_NAME,
 					HAVE_CONFIG_H,
+					HAVE_SECOND_MUSIC_SYSTEM,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Marathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
