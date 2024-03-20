@@ -16,8 +16,12 @@ runs:
     using: "composite"
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: true
+    
+    - name: Checkout sms submodule
+      run: |
+        git submodule sync ./csms-binaries
+        git -c protocol.version=2 submodule update --init --force --depth=1 ./csms-binaries
+      shell: bash
     
     - name: Install Tools
       run: brew install nasm
