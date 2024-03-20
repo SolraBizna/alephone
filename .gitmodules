@@ -7,3 +7,6 @@
 [submodule "data/Scenarios/Marathon Infinity"]
 	path = data/Scenarios/Marathon Infinity
 	url = ../data-marathon-infinity.git
+[submodule "csms-binaries"]
+	path = csms-binaries
+	url = https://github.com/SolraBizna/csms-binaries
