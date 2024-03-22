@@ -85,3 +85,16 @@ jobs:
         uses: ./.github/actions/run-tests
         with:
           test_application_path: VisualStudio/Release/Tests.exe
+
+  linux-release:
+    needs: [linux, linux-without-ffmpeg, linux-without-opengl]
+    uses: ./.github/workflows/release-linux.yml
+    
+  mac-osx-release:
+    needs: [mac-osx-x64, mac-osx-arm]
+    uses: ./.github/workflows/release-mac-osx.yml
+    secrets: inherit
+  
+  windows-release:
+    needs: [windows-x64, windows-x86]
+    uses: ./.github/workflows/release-windows.yml
