@@ -41,6 +41,7 @@ jobs:
       run: cd PBProjects && xcodebuild -target "Aleph One" -target "Marathon" -target "Marathon 2" -target "Marathon Infinity" DEVELOPMENT_TEAM='' CODE_SIGN_IDENTITY='-' CODE_SIGN_STYLE='Automatic' build
 
     - name: Codesign app bundle
+      if: github.repository == 'Aleph-One-Marathon/alephone'
       # Extract the secrets we defined earlier as environment variables
       env: 
         MACOS_CERTIFICATE: ${{ secrets.PROD_MACOS_CERTIFICATE }}
@@ -69,6 +70,7 @@ jobs:
         /usr/bin/codesign --force -s "$MACOS_CERTIFICATE_NAME" --options runtime "$GITHUB_WORKSPACE/PBProjects/build/Release/Classic Marathon Infinity.app" -v
 
     - name: "Notarize app bundle"
+      if: github.repository == 'Aleph-One-Marathon/alephone'
       # Extract the secrets we defined earlier as environment variables
       env:
         PROD_MACOS_NOTARIZATION_APPLE_ID: ${{ secrets.PROD_MACOS_NOTARIZATION_APPLE_ID }}
