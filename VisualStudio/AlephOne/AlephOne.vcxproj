@@ -236,12 +236,13 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -255,7 +256,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -263,7 +264,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Marathon Infinity|Win32'">
@@ -277,7 +279,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -285,7 +287,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Marathon|Win32'">
@@ -299,7 +302,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -307,7 +310,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|Win32'">
@@ -343,7 +347,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -351,7 +355,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -362,12 +367,13 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -381,7 +387,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -389,7 +395,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Marathon Infinity|x64'">
@@ -403,7 +410,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -411,7 +418,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Marathon|x64'">
@@ -425,7 +433,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -433,7 +441,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|x64'">
@@ -469,7 +478,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Source_Files\;$(ProjectDir)..\..\Source_Files\XML;$(ProjectDir)..\..\Source_Files\TCPMess;$(ProjectDir)..\..\Source_Files\Sound;$(ProjectDir)..\..\Source_Files\RenderOther;$(ProjectDir)..\..\Source_Files\RenderMain;$(ProjectDir)..\..\Source_Files\Network\Metaserver;$(ProjectDir)..\..\Source_Files\Network;$(ProjectDir)..\..\Source_Files\ModelView;$(ProjectDir)..\..\Source_Files\Misc;$(ProjectDir)..\..\Source_Files\Lua;$(ProjectDir)..\..\Source_Files\Input;$(ProjectDir)..\..\Source_Files\GameWorld;$(ProjectDir)..\..\Source_Files\Files;$(ProjectDir)..\..\Source_Files\FFmpeg;$(ProjectDir)..\..\Source_Files\CSeries;$(ProjectDir)..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -477,7 +486,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -494,6 +504,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WIN32</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN32</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32</PreprocessorDefinitions>
@@ -556,6 +567,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <ResourceCompile Include="..\..\Resources\Windows\marathon.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -594,6 +606,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <ResourceCompile Include="..\..\Resources\Windows\marathon2.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -632,6 +645,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Steam Marathon|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\Source_Files\Misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Marathon 2|x64'">$(ProjectDir)\..\..\csms-binaries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
