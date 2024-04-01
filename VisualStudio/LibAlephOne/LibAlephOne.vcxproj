@@ -216,6 +216,7 @@
     <ClCompile Include="..\..\Source_Files\Lua\lua_saved_objects.cpp" />
     <ClCompile Include="..\..\Source_Files\Lua\lua_script.cpp" />
     <ClCompile Include="..\..\Source_Files\Lua\lua_serialize.cpp" />
+    <ClCompile Include="..\..\Source_Files\Lua\lua_sms.cpp" />
     <ClCompile Include="..\..\Source_Files\Misc\ActionQueues.cpp" />
     <ClCompile Include="..\..\Source_Files\Misc\CircularByteBuffer.cpp" />
     <ClCompile Include="..\..\Source_Files\Misc\Console.cpp" />
@@ -341,6 +342,7 @@
     <ClCompile Include="..\..\Source_Files\Sound\MusicPlayer.cpp" />
     <ClCompile Include="..\..\Source_Files\Sound\OpenALManager.cpp" />
     <ClCompile Include="..\..\Source_Files\Sound\ReplacementSounds.cpp" />
+    <ClCompile Include="..\..\Source_Files\Sound\SecondMusicSystem.cpp" />
     <ClCompile Include="..\..\Source_Files\Sound\SndfileDecoder.cpp" />
     <ClCompile Include="..\..\Source_Files\Sound\SoundFile.cpp" />
     <ClCompile Include="..\..\Source_Files\Sound\SoundManager.cpp" />
