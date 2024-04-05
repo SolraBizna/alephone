@@ -30,6 +30,7 @@ runs:
     - name: Vcpkg Integration
       run: |
         $vcpkg_path = (Join-Path ${env:VCPKG_INSTALLATION_ROOT} vcpkg.exe)
+        echo vcpkg_path=$vcpkg_path >> $env:GITHUB_ENV
         &$vcpkg_path integrate install
       shell: pwsh
       
@@ -39,12 +40,26 @@ runs:
         echo vcpkg_current_hash=$vcpkg_commit_id >> $env:GITHUB_ENV
       shell: pwsh
       
-    - name: Cache Vcpkg
-      uses: actions/cache@v4
+    - name: Cache Vcpkg (restore)
+      uses: actions/cache/restore@v4
       with:
-        path: vcpkg/${{inputs.vcpkg_installed_folder}}
-        key: ${{runner.os}}-${{inputs.vcpkg_installed_folder}}-${{env.vcpkg_current_hash}}-${{hashFiles('**/vcpkg.json')}}
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-
+          ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-
+
+    - name: Install Dependencies
+      working-directory: ./vcpkg
+      run: ${{ env.vcpkg_path }} --triplet=${{ inputs.platform }}-windows --x-install-root=${{ inputs.vcpkg_installed_folder }} --feature-flags="versions" install
+      shell: pwsh
+      
+    - name: Cache Vcpkg (save)
+      uses: actions/cache/save@v4
+      with:
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
         
     - name: Build
-      run: msbuild /m /p:Platform=${{inputs.platform}} /p:Configuration=Release ./VisualStudio/AlephOne.sln
+      run: msbuild /m /p:Platform=${{ inputs.platform }} /p:Configuration=Release ./VisualStudio/AlephOne.sln
       shell: pwsh
