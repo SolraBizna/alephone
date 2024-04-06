@@ -60,7 +60,6 @@ runs:
     - name: Save Vcpkg cache for x64
       if: inputs.xcode_arch == 'x86_64' || inputs.xcode_arch == ''      
       uses: actions/cache/save@v4
-      if: always()
       with:
         path: vcpkg/${{inputs.vcpkg_installed_folder}}
         key: ${{runner.os}}-installed-x64-osx-${{env.vcpkg_current_hash}}-${{hashFiles('**/vcpkg.json')}}

@@ -51,7 +51,7 @@ runs:
 
     - name: Install Dependencies
       working-directory: ./vcpkg
-      run: ${{ env.vcpkg_path }} --triplet=${{ inputs.platform }}-windows --x-install-root=${{ inputs.vcpkg_installed_folder }} --feature-flags="versions" install
+      run: ${{ env.vcpkg_path }} install --triplet=${{ inputs.platform }}-windows-static --x-install-root=${{ inputs.vcpkg_installed_folder }}
       shell: pwsh
       
     - name: Cache Vcpkg (save)
