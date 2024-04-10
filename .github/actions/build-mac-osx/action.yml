@@ -25,13 +25,6 @@ runs:
     - name: Install tools
       run: brew install nasm
       shell: bash
-
-    - name: Update vcpkg
-      run: |
-        cd $VCPKG_INSTALLATION_ROOT
-        git pull
-        ./vcpkg update
-      shell: bash
       
     - name: Vcpkg Integration
       run: $VCPKG_INSTALLATION_ROOT/vcpkg integrate install
