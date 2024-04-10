@@ -241,7 +241,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x86-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -264,7 +264,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x86-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -287,7 +287,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x86-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -310,7 +310,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x86-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -355,7 +355,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x86-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -372,7 +372,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2maind.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -395,7 +395,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -418,7 +418,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -441,7 +441,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -486,7 +486,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>c_second_music_system.lib;Userenv.lib;Synchronization.lib;Ntdll.lib;SDL2main.lib;shlwapi.lib;dwmapi.lib;ws2_32.lib;Strmiids.lib;mfuuid.lib;mfplat.lib;imm32.lib;Setupapi.lib;Iphlpapi.lib;Version.lib;winmm.lib;crypt32.lib;Secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\csms-binaries\windows-x64-release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
