@@ -60,7 +60,6 @@ jobs:
           
   windows-x64:
     name: Windows x64
-    runs-on: windows-2022
     uses: ./.github/workflows/build-windows.yml
     with:
       platform: x64
