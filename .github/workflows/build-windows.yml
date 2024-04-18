@@ -1,5 +1,4 @@
 name: Build Windows
-description: workflow used to build for windows
 
 on:
   workflow_call:
