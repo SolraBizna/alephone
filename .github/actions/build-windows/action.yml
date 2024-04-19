@@ -43,8 +43,8 @@ runs:
         echo vcpkg_current_hash=$vcpkg_commit_id >> $env:GITHUB_ENV
       shell: pwsh
       
-    - name: Cache Vcpkg
-      uses: actions/cache@v4
+    - name: Restore Vcpkg cache
+      uses: actions/cache/restore@v4
       with:
         path: vcpkg/${{ inputs.vcpkg_installed_folder }}
         key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
@@ -63,3 +63,9 @@ runs:
     - name: Build
       run: foreach ($configuration in "${{inputs.configurations}}".Split(",").Trim()) { msbuild /m /p:Platform=${{inputs.platform}} /p:Configuration="$configuration" ./VisualStudio/AlephOne.sln }
       shell: pwsh
+
+    - name: Cache Vcpkg
+      uses: actions/cache/save@v4
+      with:
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
