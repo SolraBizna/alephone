@@ -12,6 +12,7 @@ on:
       save-always:
         default: 'true'
         required: false
+        type: boolean
 
 defaults:
   run:
