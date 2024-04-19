@@ -10,7 +10,7 @@ on:
         required: true
         type: string
       save-always:
-        default: 'true'
+        default: true
         required: false
         type: boolean
 
