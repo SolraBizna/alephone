@@ -48,20 +48,28 @@ jobs:
         $vcpkg_commit_id = git -C ${env:VCPKG_INSTALLATION_ROOT} rev-parse --short HEAD
         echo vcpkg_current_hash=$vcpkg_commit_id >> $env:GITHUB_ENV
       
-    - name: Cache Vcpkg
-      uses: nemored/cache@save-always
+    - name: Restore Vcpkg cache
+      uses: actions/cache/restore@v4
       with:
         path: vcpkg/${{ inputs.vcpkg_installed_folder }}
         key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
         restore-keys: |
           ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-
           ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-
-        save-always: true
         
     - name: Build
+      id: build
       run: msbuild /m /p:Platform=${{ inputs.platform }} /p:Configuration=Release ./VisualStudio/AlephOne.sln
+      continue-on-error: true
+
+    - name: Cache Vcpkg
+      uses: actions/cache/save@v4
+      with:
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
 
     - name: Run Tests
+      if: steps.build.outcome == 'success'
       uses: ./.github/actions/run-tests
       with:
         test_application_path: VisualStudio/x64/Release/Tests.exe
