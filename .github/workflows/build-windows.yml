@@ -9,6 +9,9 @@ on:
       vcpkg_installed_folder:
         required: true
         type: string
+      save-always:
+        default: 'true'
+        required: false
 
 defaults:
   run:
