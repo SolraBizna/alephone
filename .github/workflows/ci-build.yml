@@ -62,21 +62,15 @@ jobs:
     with:
       platform: x64
       vcpkg_installed_folder: installed-x64-windows
+      test_application_path: VisualStudio/x64/Release/Tests.exe
           
   windows-x86:
-    runs-on: windows-2022
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build
-        uses: ./.github/actions/build-windows
-        with:
-          platform: x86
-          configurations: Release
-          vcpkg_installed_folder: installed-x86-windows
-      - name: Run Tests
-        uses: ./.github/actions/run-tests
-        with:
-          test_application_path: VisualStudio/Release/Tests.exe
+    name: Windows x86
+    uses: ./.github/workflows/build-windows.yml
+    with:
+      platform: x86
+      vcpkg_installed_folder: installed-x86-windows
+      test_application_path: VisualStudio/Release/Tests.exe
 
   linux-release:
     needs: [linux, linux-without-ffmpeg, linux-without-opengl]

@@ -9,10 +9,9 @@ on:
       vcpkg_installed_folder:
         required: true
         type: string
-      save-always:
-        default: true
-        required: false
-        type: boolean
+      test_application_path:
+        required: true
+        type: string
 
 defaults:
   run:
@@ -72,4 +71,4 @@ jobs:
       if: steps.build.outcome == 'success'
       uses: ./.github/actions/run-tests
       with:
-        test_application_path: VisualStudio/x64/Release/Tests.exe
+        test_application_path: ${{ inputs.test_application_path }}
