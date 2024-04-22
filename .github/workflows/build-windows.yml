@@ -1,0 +1,75 @@
+name: Build Windows
+
+on:
+  workflow_call:
+    inputs:
+      platform:
+        required: true
+        type: string
+      vcpkg_installed_folder:
+        required: true
+        type: string
+      save-always:
+        default: true
+        required: false
+        type: boolean
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-2022
+    steps:
+    - name: Checkout Aleph One
+      uses: actions/checkout@v4
+    
+    - name: Checkout sms submodule
+      run: |
+        git submodule sync ./csms-binaries
+        git -c protocol.version=2 submodule update --init --force --depth=1 ./csms-binaries
+      
+    - name: Temp hack to delete broken VC tools
+      run: Remove-Item -Path "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\Microsoft.VCToolsVersion.v143.default.*" -Recurse
+     
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v2
+      
+    - name: Vcpkg Integration
+      run: |
+        $vcpkg_path = (Join-Path ${env:VCPKG_INSTALLATION_ROOT} vcpkg.exe)
+        echo vcpkg_path=$vcpkg_path >> $env:GITHUB_ENV
+        &$vcpkg_path integrate install
+      
+    - name: Get Vcpkg current hash
+      run: | 
+        $vcpkg_commit_id = git -C ${env:VCPKG_INSTALLATION_ROOT} rev-parse --short HEAD
+        echo vcpkg_current_hash=$vcpkg_commit_id >> $env:GITHUB_ENV
+      
+    - name: Restore Vcpkg cache
+      uses: actions/cache/restore@v4
+      with:
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-
+          ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-
+        
+    - name: Build
+      id: build
+      run: msbuild /m /p:Platform=${{ inputs.platform }} /p:Configuration=Release ./VisualStudio/AlephOne.sln
+      continue-on-error: true
+
+    - name: Cache Vcpkg
+      uses: actions/cache/save@v4
+      with:
+        path: vcpkg/${{ inputs.vcpkg_installed_folder }}
+        key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
+
+    - name: Run Tests
+      if: steps.build.outcome == 'success'
+      uses: ./.github/actions/run-tests
+      with:
+        test_application_path: VisualStudio/x64/Release/Tests.exe
