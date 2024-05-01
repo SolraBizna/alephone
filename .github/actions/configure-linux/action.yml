@@ -20,7 +20,8 @@ runs:
     - name: Install Second Music System
       run: |
         git clone https://github.com/SolraBizna/second-music-system -b main
-        sudo second-music-system/c-second-music-system/build.sh --build --install
+        second-music-system/c-second-music-system/build.sh --build
+        sudo second-music-system/c-second-music-system/build.sh --install
       shell: bash
       
     - name: Configure
