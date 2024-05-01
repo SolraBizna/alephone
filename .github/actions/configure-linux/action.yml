@@ -14,7 +14,14 @@ runs:
       shell: bash
       
     - name: Install Dependencies 
-      run: sudo apt-get install autoconf-archive libboost-all-dev libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libzzip-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libswresample-dev libpng-dev libcurl4-gnutls-dev libminiupnpc-dev libsndfile-dev libopenal-dev
+      run: sudo apt-get install autoconf-archive libboost-all-dev libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libzzip-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libswresample-dev libpng-dev libcurl4-gnutls-dev libminiupnpc-dev libsndfile-dev libopenal-dev libsoxr-dev rustc cargo
+      shell: bash
+
+    - name: Install Second Music System
+      run: |
+        git clone https://github.com/SolraBizna/second-music-system -b main
+        second-music-system/c-second-music-system/build.sh --build
+        sudo second-music-system/c-second-music-system/build.sh --install
       shell: bash
       
     - name: Configure
