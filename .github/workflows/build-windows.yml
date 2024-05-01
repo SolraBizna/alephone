@@ -67,7 +67,7 @@ jobs:
         path: vcpkg/${{ inputs.vcpkg_installed_folder }}
         key: ${{ runner.os }}-${{ inputs.vcpkg_installed_folder }}-${{ env.vcpkg_current_hash }}-${{ hashFiles('**/vcpkg.json') }}
 
-    - name: Fail build
+    - name: Deferred build failure
       if: steps.build.outcome != 'success'
       run: exit 1
 
