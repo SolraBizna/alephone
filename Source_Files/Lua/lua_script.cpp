@@ -206,7 +206,7 @@ public:
 	void Stop() { running_ = false; }
 	bool Matches(lua_State *state) { return state == State(); }
 	void MarkCollections(std::set<short>* collections);
-	void ExecuteCommand(const std::string& line);
+	bool ExecuteCommand(const std::string& line);
 	std::string SavePassed();
 	std::string SaveAll();
 
@@ -914,9 +914,10 @@ bool LuaState::Run()
 	return (result == 0);
 }
 
-void LuaState::ExecuteCommand(const std::string& line)
+bool LuaState::ExecuteCommand(const std::string& line)
 {
-
+	auto success = true;
+	
 	std::string buffer;
 	bool print_result = false;
 	if (line[0] == '=') 
@@ -933,12 +934,16 @@ void LuaState::ExecuteCommand(const std::string& line)
 	if (luaL_loadbuffer(State(), buffer.c_str(), buffer.size(), "console") != 0)
 	{
 		L_Error(lua_tostring(State(), -1));
+		success = false;
 	}
 	else 
 	{
 		running_ = true;
 		if (lua_pcall(State(), 0, (print_result) ? 1 : 0, 0) != 0)
+		{
 			L_Error(lua_tostring(State(), -1));
+			success = false;
+		}
 		else if (print_result)
 		{
 			lua_getglobal(State(), "tostring");
@@ -951,7 +956,8 @@ void LuaState::ExecuteCommand(const std::string& line)
 		}
 	}
 	
-	lua_settop(State(), 0);	
+	lua_settop(State(), 0);
+	return success;
 }
 
 extern bool can_load_collection(short);
@@ -1880,6 +1886,11 @@ bool RunLuaScript()
 	InitializeLuaVariables();
 	PreservePreLuaSettings();
 
+	if (Achievements::instance()->get_disabled_reason().size())
+	{
+		screen_printf(Achievements::instance()->get_disabled_reason().c_str());
+	}
+
 	lua_random_local_generator.z = (static_cast<uint32>(local_random()) << 16) + static_cast<uint32>(local_random());
 	lua_random_local_generator.w = (static_cast<uint32>(local_random()) << 16) + static_cast<uint32>(local_random());
 	lua_random_local_generator.jsr = (static_cast<uint32>(local_random()) << 16) + static_cast<uint32>(local_random());
@@ -1903,8 +1914,9 @@ void ExecuteLuaString(const std::string& line)
 	}
 
 	exit_interpolated_world();
-	InvalidateAchievements();
-	states[_solo_lua_script]->ExecuteCommand(line);
+	if (states[_solo_lua_script]->ExecuteCommand(line)) {
+		InvalidateAchievements();
+	}
 	enter_interpolated_world();
 }
 
@@ -1956,29 +1968,35 @@ void LoadSoloLua()
 
 void LoadAchievementsLua()
 {
-	if (states.count(_embedded_lua_script) ||
-		states.count(_lua_netscript) ||
-		states.count(_solo_lua_script))
-		{
-			logNote("achievements: invalidating due to other Lua (%i %i %i)",
-					states.count(_embedded_lua_script),
-					states.count(_lua_netscript),
-					states.count(_solo_lua_script));
-		return;
-	}
-	
+	Achievements::instance()->set_disabled_reason("");
 	auto lua = Achievements::instance()->get_lua();
 
 	if (lua.size())
 	{
+		if (states.count(_embedded_lua_script) ||
+			states.count(_lua_netscript) ||
+			states.count(_solo_lua_script))
+		{
+			Achievements::instance()->set_disabled_reason("Achievements disabled (third party scripts)");
+			logNote("achievements: invalidating due to other Lua (%i %i %i)",
+				states.count(_embedded_lua_script),
+				states.count(_lua_netscript),
+				states.count(_solo_lua_script));
+			return;
+		}
+
 		LoadLuaScript(lua.data(), lua.size(), _achievements_lua_script);
 	}
 }
 
 void InvalidateAchievements()
 {
-	logNote("achievements: invalidating due to Lua command");
-	states.erase(_achievements_lua_script);
+	if (states.count(_achievements_lua_script))
+	{
+		screen_printf("Achievements disabled (console command)");
+		logNote("achievements: invalidating due to Lua command");
+		states.erase(_achievements_lua_script);
+	}
 }
 
 void LoadStatsLua()

@@ -42,6 +42,10 @@ std::string Achievements::get_lua()
 		}
 		else
 		{
+			if (physics_checksum != m1_physics_checksum)
+			{
+				set_disabled_reason("Achievements disabled (third party physics)");
+			}
 			logNote("achievements: invalidating due to checksum mismatch (map: 0x%x 0x%x, phy 0x%x 0x%x)", map_checksum, m1_map_checksum, physics_checksum, m1_physics_checksum);
 		}
 	}

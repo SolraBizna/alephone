@@ -134,6 +134,8 @@ static const size_t NUMBER_OF_NETWORK_GAME_PROTOCOL_NAMES = sizeof(sNetworkGameP
 // Have the prefs been inited?
 static bool PrefsInited = false;
 
+static std::vector<boost::filesystem::path> orphan_disabled_plugins;
+static std::vector<boost::filesystem::path> orphan_enabled_plugins;
 
 // Global preferences data
 struct graphics_preferences_data *graphics_preferences = NULL;
@@ -1012,10 +1014,18 @@ static const char* mouse_accel_labels[] = {
 };
 
 static const char* max_saves_labels[] = {
+#ifdef HAVE_STEAM
+	"20", "100", "500", NULL
+#else
 	"20", "100", "500", "Unlimited", NULL
+#endif
 };
 static const uint32 max_saves_values[] = {
+#ifdef HAVE_STEAM
+	20, 100, 500
+#else
 	20, 100, 500, 0
+#endif
 };
 
 static const std::unordered_map<ChannelType, int> mapping_channel_index = {
@@ -1495,8 +1505,8 @@ static void graphics_dialog(void *arg)
 		    write_preferences();
 
 			ResetAllMMLValues();
-			LoadBaseMMLScripts();
-			Plugins::instance()->load_mml();
+			LoadBaseMMLScripts(true);
+			Plugins::instance()->load_mml(true);
 
 		    change_screen_mode(&graphics_preferences->screen_mode, true);
 		    clear_screen(true);
@@ -1678,7 +1688,7 @@ static void sound_dialog(void *arg)
  *  Controls dialog
  */
 
-const float kMinSensitivityLog = -3.0f;
+const float kMinSensitivityLog = -7.0f;
 const float kMaxSensitivityLog = 3.0f;
 const float kSensitivityLogRange = kMaxSensitivityLog - kMinSensitivityLog;
 
@@ -1691,15 +1701,12 @@ public:
 	virtual std::string formatted_value(void) {
 		std::ostringstream ss;
 		float val = std::exp(selection * kSensitivityLogRange / 1000.0f + kMinSensitivityLog);
-		if (val >= 1.f)
-			ss.precision(4);
-		else if (val >= 0.1f)
-			ss.precision(3);
-		else if (val >= 0.01f)
+		if (val >= 10.f)
 			ss.precision(2);
 		else
-			ss.precision(1);
-		ss << std::showpoint << val;
+			ss.precision(3);
+
+		ss << std::fixed << std::showpoint << val;
 		return ss.str();
 	}
 };
@@ -3026,8 +3033,8 @@ static void plugins_dialog(void *)
 			write_preferences();
 
 			ResetAllMMLValues();
-			LoadBaseMMLScripts();
-			Plugins::instance()->load_mml();
+			LoadBaseMMLScripts(true);
+			Plugins::instance()->load_mml(true);
 
 			Plugins::instance()->set_map_checksum(get_current_map_checksum());
 			LoadLevelScripts(get_map_file());
@@ -3924,12 +3931,35 @@ InfoTree environment_preferences_tree()
 	root.put_attr("use_native_file_dialogs", environment_preferences->use_native_file_dialogs);
 #endif
 
-	for (Plugins::iterator it = Plugins::instance()->begin(); it != Plugins::instance()->end(); ++it) {
-		if (it->compatible() && !it->enabled) {
-			InfoTree disable;
-			disable.put_attr_path("path", it->directory.GetPath());
-			root.add_child("disable_plugin", disable);
+	for (Plugins::iterator it = Plugins::instance()->begin(); it != Plugins::instance()->end(); ++it)
+	{
+		if (it->compatible())
+		{
+			if (it->auto_enable && !it->enabled)
+			{
+				InfoTree disable;
+				disable.put_attr_path("path", it->directory.GetPath());
+				root.add_child("disable_plugin", disable);
+			}
+			else if (!it->auto_enable && it->enabled)
+			{
+				InfoTree enable;
+				enable.put_attr_path("path", it->directory.GetPath());
+				root.add_child("enable_plugin", enable);
+			}
 		}
+	}
+
+	for (const auto& plugin : orphan_disabled_plugins) {
+		InfoTree disable;
+		disable.put_attr_path("path", plugin.string());
+		root.add_child("disable_plugin", disable);
+	}
+
+	for (const auto& plugin : orphan_enabled_plugins) {
+		InfoTree enable;
+		enable.put_attr_path("path", plugin.string());
+		root.add_child("enable_plugin", enable);
 	}
 	
 	return root;
@@ -4146,7 +4176,11 @@ static void default_environment_preferences(environment_preferences_data *prefer
 	preferences->use_replay_net_lua = false;
 	preferences->hide_extensions = true;
 	preferences->film_profile = FILM_PROFILE_DEFAULT;
+#ifdef HAVE_STEAM
+	preferences->maximum_quick_saves = 500;
+#else
 	preferences->maximum_quick_saves = 0;
+#endif
 #ifdef HAVE_NFD
 	preferences->use_native_file_dialogs = false;
 #endif
@@ -4933,12 +4967,29 @@ void parse_environment_preferences(InfoTree root, std::string version)
 	root.read_attr("use_native_file_dialogs", environment_preferences->use_native_file_dialogs);
 #endif
 	
+	orphan_disabled_plugins.clear();
 	for (const InfoTree &plugin : root.children_named("disable_plugin"))
 	{
 		char tempstr[256];
 		if (plugin.read_path("path", tempstr))
 		{
-			Plugins::instance()->disable(tempstr);
+			if (!Plugins::instance()->disable(tempstr))
+			{
+				orphan_disabled_plugins.push_back(tempstr);
+			}
+		}
+	}
+
+	orphan_enabled_plugins.clear();
+	for (const InfoTree& plugin : root.children_named("enable_plugin"))
+	{
+		char tempstr[256];
+		if (plugin.read_path("path", tempstr))
+		{
+			if (!Plugins::instance()->enable(tempstr))
+			{
+				orphan_enabled_plugins.push_back(tempstr);
+			}
 		}
 	}
 }

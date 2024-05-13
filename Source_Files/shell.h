@@ -108,12 +108,8 @@ enum // input devices
 
 void global_idle_proc(void);
 
-class InfoTree;
-void parse_mml_cheats(const InfoTree& root);
-void reset_mml_cheats();
-
 // Load the base MML scripts:
-void LoadBaseMMLScripts();
+void LoadBaseMMLScripts(bool load_menu_mml_only);
 
 // Application and directory info:
 char *expand_symbolic_paths(char *dest, const char *src, int maxlen);

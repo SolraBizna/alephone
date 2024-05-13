@@ -128,10 +128,6 @@
 #include "steamshim_child.h"
 #endif
 
-// LP addition: whether or not the cheats are active
-// Defined in shell_misc.cpp
-extern bool CheatsActive;
-
 // Data directories
 vector <DirectorySpecifier> data_search_path; // List of directories in which data files are searched for
 DirectorySpecifier local_data_dir;    // Local (per-user) data file directory
@@ -156,10 +152,6 @@ bool insecure_lua = false;
 static bool force_fullscreen = false; // Force fullscreen mode
 static bool force_windowed = false;   // Force windowed mode
 */
-
-// Prototypes
-extern int process_keyword_key(char key);
-extern void handle_keyword(int type_of_cheat);
 
 void PlayInterfaceButtonSound(short SoundID);
 
@@ -381,7 +373,7 @@ void initialize_application(void)
 	load_film_profile(FILM_PROFILE_DEFAULT, false);
 
 	// Parse MML files
-	LoadBaseMMLScripts();
+	LoadBaseMMLScripts(true);
 
 	// Check for presence of strings
 	if (!TS_IsPresent(strERRORS) || !TS_IsPresent(strFILENAMES)) {
@@ -402,7 +394,7 @@ void initialize_application(void)
 			
 			// Parse MML files again, now that we have a new dir to search
 			initialize_fonts(false);
-			LoadBaseMMLScripts();
+			LoadBaseMMLScripts(true);
 		}
 	}
 
@@ -443,7 +435,7 @@ void initialize_application(void)
 		graphics_preferences->screen_mode.fullscreen = false;
 	write_preferences();
 
-	Plugins::instance()->load_mml();
+	Plugins::instance()->load_mml(true);
 
 //	SDL_WM_SetCaption(application_name, application_name);
 
@@ -776,11 +768,6 @@ static void handle_game_key(const SDL_Event &event)
 	bool changed_prefs = false;
 	bool changed_resolution = false;
 
-	if (!game_is_networked && (event.key.keysym.mod & KMOD_CTRL) && CheatsActive) {
-		int type_of_cheat = process_keyword_key(key);
-		if (type_of_cheat != NONE)
-			handle_keyword(type_of_cheat);
-	}
 	if (Console::instance()->input_active()) {
 		switch(key) {
 			case SDLK_RETURN:
@@ -1570,7 +1557,7 @@ void dump_screen(void)
 #endif
 }
 
-static bool _ParseMMLDirectory(DirectorySpecifier& dir)
+static bool _ParseMMLDirectory(DirectorySpecifier& dir, bool load_menu_mml_only)
 {
 	// Get sorted list of files in directory
 	vector<dir_entry> de;
@@ -1593,20 +1580,20 @@ static bool _ParseMMLDirectory(DirectorySpecifier& dir)
 		FileSpecifier file_name = dir + i->name;
 		
 		// Parse file
-		ParseMMLFromFile(file_name);
+		ParseMMLFromFile(file_name, load_menu_mml_only);
 	}
 	
 	return true;
 }
 
-void LoadBaseMMLScripts()
+void LoadBaseMMLScripts(bool load_menu_mml_only)
 {
 	vector <DirectorySpecifier>::const_iterator i = data_search_path.begin(), end = data_search_path.end();
 	while (i != end) {
 		DirectorySpecifier path = *i + "MML";
-		_ParseMMLDirectory(path);
+		_ParseMMLDirectory(path, load_menu_mml_only);
 		path = *i + "Scripts";
-		_ParseMMLDirectory(path);
+		_ParseMMLDirectory(path, load_menu_mml_only);
 		i++;
 	}
 }
