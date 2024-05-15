@@ -1,0 +1,8 @@
+name: soxr
+buildsystem: cmake
+sources:
+  - sha1: 32ea46b1a8c0c15f835422892d02fce8286aec3c
+    type: archive
+    archive-type: tar-xz
+    url: https://sourceforge.net/projects/soxr/files/soxr-0.1.3-Source.tar.xz/download
+cleanup: [/include, /lib/*.a, /lib/debug, /lib/cmake]

@@ -1,11 +1,15 @@
 name: second-music-system
 modules:
-  - cargo
+  - soxr.yml
 buildsystem: simple
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  env:
+    CARGO_HOME: /run/build/second-music-system/cargo
 build-commands:
-  - source /usr/lib/sdk/rust-stable/enable.sh
-  - ./c-second-music-system/build.sh --prefix=/app --build --install
+  - ./c-second-music-system/build.sh --prefix /app --offline --build --install --target x86_64-unknown-linux-gnu
 sources:
   - type: git
     url: https://github.com/SolraBizna/second-music-system.git
-    tag: v0.1.0
+    tag: v0.1.0-8
+  - cargo-sources-for-flatpak.json
