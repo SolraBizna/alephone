@@ -11,6 +11,7 @@ config-opts:
   - --with-zzip
   - --with-png
   - --with-miniupnpc
+  - --with-sms
 sources:
   - type: dir
     path: ../..

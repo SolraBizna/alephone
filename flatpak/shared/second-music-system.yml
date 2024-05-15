@@ -1,0 +1,11 @@
+name: second-music-system
+modules:
+  - cargo
+buildsystem: simple
+build-commands:
+  - source /usr/lib/sdk/rust-stable/enable.sh
+  - ./c-second-music-system/build.sh --prefix=/app --build --install
+sources:
+  - type: git
+    url: https://github.com/SolraBizna/second-music-system.git
+    tag: v0.1.0

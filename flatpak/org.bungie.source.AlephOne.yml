@@ -2,12 +2,15 @@ app-id: org.bungie.source.AlephOne
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: run.sh
 modules:
   - shared/boost.yml
   - shared/glu.yml
   - shared/zzip.yml
   - shared/miniupnpc.yml
+  - shared/second-music-system.yml
   - shared/alephone.yml
   - name: app-data
     buildsystem: simple
